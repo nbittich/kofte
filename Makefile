@@ -1,5 +1,5 @@
 P=kofte
-CFLAGS=-g -Wall -O3
+CFLAGS=-Wall -O3 -gdwarf-4
 LDLIBS=
 CC=clang
 OBJECTS=
