@@ -59,11 +59,7 @@ bool is_command(const char *input, int start, int end, const char *command) {
   if (command_length > length) {
     return false;
   }
-  if (strncmp(input + start, command, length) == 0) {
-    return true;
-  } else {
-    return false;
-  }
+  return strncmp(input + start, command, length) == 0;
 }
 
 int parse_command(char *input, command_t *output, const size_t *len) {
@@ -108,17 +104,18 @@ int parse_command(char *input, command_t *output, const size_t *len) {
     end_num = start_num;
   }
 
-  int found = -1;
+  int *found = NULL;
+  int i;
 
-  for (int i = 0; i < AVAILABLE_COMMANDS_SIZE; i++) {
+  for (i = 0; i < AVAILABLE_COMMANDS_SIZE; i++) {
     if (is_command(input, start_cmd, end_cmd, AVAILABLE_COMMANDS[i])) {
-      found = i;
+      found = &i;
       break;
     }
   }
 
-  if (found >= 0) {
-    output->command = found;
+  if (found) {
+    output->command = *found;
   } else {
     printf("COMMAND NOT FOUND\n");
     return -1;
