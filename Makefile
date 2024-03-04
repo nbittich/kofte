@@ -7,13 +7,13 @@ OBJECTS =
 PREFIX ?= /usr/local
 BINDIR ?= $(PREFIX)/bin
 
-all:
+build:
 	$(CC) -o $(P) $(CFLAGS) $(P).c
 
 clean:
 	rm -f $(P)
 
-install: all
+install: build
 	install -D -m 755 -s $(P) $(BINDIR)/$(P)
 
 uninstall:

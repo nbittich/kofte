@@ -4,6 +4,8 @@
 #define ONE_YARD 0.9144
 #define ONE_FAHRENHEIT 32
 #define ONE_KELVIN -273.15
+#define ONE_POUND 0.453592
+#define ONE_OUNCE 28.3495
 
 inline long double miles_to_km(long double *miles) { return *miles * ONE_MILE; }
 
@@ -38,3 +40,13 @@ inline long double celcius_to_kelvin(long double *celcius) {
 inline long double kelvin_to_celcius(long double *kelvin) {
   return *kelvin + ONE_KELVIN;
 }
+inline long double ounce_to_gram(long double *ounce) {
+  return *ounce * ONE_OUNCE;
+}
+inline long double gram_to_ounce(long double *gram) {
+  return *gram / ONE_OUNCE;
+}
+inline long double pound_to_kg(long double *pound) {
+  return *pound * ONE_POUND;
+}
+inline long double kg_to_pound(long double *kg) { return *kg / ONE_POUND; }
