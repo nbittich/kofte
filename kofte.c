@@ -241,8 +241,7 @@ void run_command(command_t *command) {
   }
   case OUNCE_TO_GRAM: {
     long double otg = ounce_to_gram(&command->input);
-    printf("%.2Lf %s is equal to %.2Lf %s\n", command->input,
-           plurarlize(command->input, "ounce", "ounces"), otg,
+    printf("%.2Lf %s is equal to %.2Lf %s\n", command->input, "oz", otg,
            plurarlize(otg, "gram", "grams"));
 
     break;
@@ -250,8 +249,7 @@ void run_command(command_t *command) {
   case GRAM_TO_OUNCE: {
     long double gto = gram_to_ounce(&command->input);
     printf("%.2Lf %s is equal to %.2Lf %s\n", command->input,
-           plurarlize(command->input, "gram", "grams"), gto,
-           plurarlize(gto, "ounce", "ounces"));
+           plurarlize(command->input, "gram", "grams"), gto, "oz");
 
     break;
   }
