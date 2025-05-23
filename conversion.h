@@ -34,19 +34,25 @@ inline long double fahrenheit_to_celcius(long double *fahr) {
 inline long double celcius_to_fahrenheit(long double *celcius) {
   return (*celcius * 9. / 5.) + ONE_FAHRENHEIT;
 }
+
 inline long double celcius_to_kelvin(long double *celcius) {
   return *celcius - ONE_KELVIN;
 }
+
 inline long double kelvin_to_celcius(long double *kelvin) {
   return *kelvin + ONE_KELVIN;
 }
+
 inline long double ounce_to_gram(long double *ounce) {
   return *ounce * ONE_OUNCE;
 }
+
 inline long double gram_to_ounce(long double *gram) {
   return *gram / ONE_OUNCE;
 }
+
 inline long double pound_to_kg(long double *pound) {
   return *pound * ONE_POUND;
 }
+
 inline long double kg_to_pound(long double *kg) { return *kg / ONE_POUND; }

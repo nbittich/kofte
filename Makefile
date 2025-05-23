@@ -1,7 +1,7 @@
 P=kofte
 CFLAGS = -Wall -O3 -gdwarf-4
 LDLIBS =
-CC = clang
+CC = gcc
 OBJECTS =
 
 PREFIX ?= /usr/local
